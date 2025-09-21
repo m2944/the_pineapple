@@ -1,6 +1,6 @@
 import FeatureCard from "./components/FeatureCard";
 import Image from "next/image";
-import FaqItem from "./components/FaqItem"; // Import our new component
+import FaqItem from "./components/FaqItem";
 
 export default function HomePage() {
   return (
@@ -24,9 +24,9 @@ export default function HomePage() {
           </header>
           <div className="flex items-center gap-2 mt-4">
               <div className="flex -space-x-2 overflow-hidden">
-                <img className="inline-block h-6 w-6 rounded-full ring-2 ring-black" src="https://randomuser.me/api/portraits/women/79.jpg" alt=""/>
-                <img className="inline-block h-6 w-6 rounded-full ring-2 ring-black" src="https://randomuser.me/api/portraits/men/32.jpg" alt=""/>
-                <img className="inline-block h-6 w-6 rounded-full ring-2 ring-black" src="https://randomuser.me/api/portraits/women/50.jpg" alt=""/>
+                <Image className="inline-block h-6 w-6 rounded-full ring-2 ring-black" src="https://randomuser.me/api/portraits/women/79.jpg" alt="User avatar" width={24} height={24} />
+                <Image className="inline-block h-6 w-6 rounded-full ring-2 ring-black" src="https://randomuser.me/api/portraits/men/32.jpg" alt="User avatar" width={24} height={24} />
+                <Image className="inline-block h-6 w-6 rounded-full ring-2 ring-black" src="https://randomuser.me/api/portraits/women/50.jpg" alt="User avatar" width={24} height={24} />
               </div>
               <p className="text-sm text-gray-400">Trusted by thousands of healthy families.</p>
           </div>
@@ -63,7 +63,7 @@ export default function HomePage() {
 
         {/* --- FEATURES SECTION --- */}
         <section className="w-full flex flex-col items-center text-center">
-          <h2 className="text-4xl font-bold text-white">Everything you need. Nothing you don't.</h2>
+          <h2 className="text-4xl font-bold text-white">Everything you need. Nothing you don&apos;t.</h2>
           <p className="text-white/60 mt-4 max-w-2xl">
             Our features are designed for simplicity and power, helping you focus on what truly matters: your health.
           </p>
@@ -96,7 +96,7 @@ export default function HomePage() {
         {/* --- PRICING SECTION --- */}
         <section className="w-full flex flex-col items-center text-center mt-20">
           <h2 className="text-4xl font-bold text-white mb-4">Choose the Perfect Plan</h2>
-          <p className="text-white/70 max-w-2xl mb-12">Start with our free plan and upgrade when you're ready. No credit card required to start!</p>
+          <p className="text-white/70 max-w-2xl mb-12">Start with our free plan and upgrade when you&apos;re ready. No credit card required to start!</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl">
             <div className="flex flex-col items-center p-8 bg-gray-900 rounded-lg border border-white/10">
               <h3 className="text-2xl font-bold text-white">Free</h3>
@@ -130,17 +130,17 @@ export default function HomePage() {
         <section className="w-full flex flex-col items-center text-center mt-20">
           <h2 className="text-4xl font-bold text-white mb-4">Questions from Parents</h2>
           <p className="text-white/70 max-w-2xl mb-12">
-            We're here to help you make the best choices for your family's health.
+            We&apos;re here to help you make the best choices for your family&apos;s health.
           </p>
           <div className="w-full max-w-3xl">
             <FaqItem question="Is this app suitable for children and teenagers?" answer="Absolutely. Our app is designed to promote healthy habits, not restrictive dieting. It focuses on balanced nutrition and understanding food, making it a great educational tool for teenagers learning about their health." />
             <FaqItem question="How does the app handle food allergies?" answer="You can set up detailed allergy profiles for each family member. The app will then flag any logged foods or recipes that contain specified allergens, helping you keep your family safe." />
             <FaqItem question="Can I track the nutrition for my whole family in one account?" answer="Yes! Our Pro plan allows you to create multiple profiles under one account, so you can easily manage and monitor the nutritional intake for your entire family from one convenient place." />
-            <FaqItem question="Is the food database verified?" answer="Our food database is curated from verified sources, including national food databases and certified nutritionists. We prioritize accuracy to ensure you can trust the information you're logging." />
+            <FaqItem question="Is the food database verified?" answer="Our food database is curated from verified sources, including national food databases and certified nutritionists. We prioritize accuracy to ensure you can trust the information you&apos;re logging." />
           </div>
         </section>
 
-        {/* --- NEW: CALL TO ACTION SECTION --- */}
+        {/* --- CALL TO ACTION SECTION --- */}
         <section className="w-full mt-20">
             <div className="w-full max-w-4xl mx-auto bg-gray-900 rounded-lg p-12 text-center">
                 <h2 className="text-4xl font-bold text-white">Ready to Take Control?</h2>
@@ -152,7 +152,7 @@ export default function HomePage() {
         </section>
       </div>
 
-      {/* --- NEW: FOOTER --- */}
+      {/* --- FOOTER --- */}
       <footer className="w-full max-w-5xl text-gray-400 border-t border-gray-800 mt-24 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
             <div>
