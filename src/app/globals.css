@@ -5,10 +5,10 @@ html {
 }
 
 :root {
-  --background: #ffffff;
+  /* Updated with your new color palette */
+  --background: #F8F8F4; 
   --foreground: #171717;
-  /* New color variable */
-  --header-text-color: oklab(0.442 0.00462477 -0.0163588);
+  --accent-color: #3E5136;
 }
 
 @theme inline {
@@ -16,19 +16,20 @@ html {
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  /* Defining the new font */
-  --font-neue: "neueFont", "neueFont Fallback", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: oklch(0.129 0.042 264.695);
-    --foreground: #ededed;
+    /* Forcing light mode by using the same colors */
+    --background: #F8F8F4;
+    --foreground: #171717;
+    --accent-color: #3E5136;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Using a standard, clean sans-serif font stack */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
