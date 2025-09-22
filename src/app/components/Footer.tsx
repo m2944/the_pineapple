@@ -1,24 +1,33 @@
 // app/components/Footer.tsx
 'use client';
 
-import Link from 'next/link';
-
 export default function Footer() {
-  // We'll keep the handleSubmit logic here in case you want to reconnect it later
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    // Logic to send to Formspree would go here
-    alert("Thank you for subscribing!");
-    (event.target as HTMLFormElement).reset();
+    try {
+      const response = await fetch("YOUR_FORMSPREE_URL_HERE", {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      if (response.ok) {
+        alert("Thank you for subscribing!");
+        (event.target as HTMLFormElement).reset();
+      } else {
+        alert("Submission failed. Please try again.");
+      }
+    } catch (error) {
+      alert("An error occurred. Please try again.");
+    }
   }
 
   return (
     <footer className="w-full bg-green-800 text-white mt-24 rounded-t-3xl">
       <div className="w-full max-w-5xl mx-auto p-8 md:p-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          
-          {/* Column 1: Explore More Olive Tools */}
           <div>
             <h3 className="font-bold mb-4">Explore More Olive Tools</h3>
             <ul className="space-y-2 text-gray-300">
@@ -29,8 +38,6 @@ export default function Footer() {
               <li><a href="#" className="hover:text-white">Food Ingredient Checker</a></li>
             </ul>
           </div>
-
-          {/* Column 2: About */}
           <div>
             <h3 className="font-bold mb-4">About</h3>
             <ul className="space-y-2 text-gray-300">
@@ -38,8 +45,6 @@ export default function Footer() {
               <li><a href="#" className="hover:text-white">Email us</a></li>
             </ul>
           </div>
-
-          {/* Column 3: Logo and Signup */}
           <div className="md:text-right">
             <h2 className="text-3xl font-bold">Olive</h2>
             <p className="mt-2 text-gray-300 mb-4">Get the latest lab testing data sent directly to your inbox.</p>
@@ -60,7 +65,6 @@ export default function Footer() {
             </form>
           </div>
         </div>
-
         <div className="text-sm text-gray-300 border-t border-gray-500 mt-12 pt-6 flex justify-between">
           <div className="flex gap-4">
             <a href="#" className="hover:text-white">Terms of Service</a>

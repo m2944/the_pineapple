@@ -9,23 +9,19 @@ export default function BlogPage() {
         News, tips, and insights on healthy eating for your family.
       </p>
 
-      {/* Blog Post Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-        {/* Post 1 */}
         <div className="bg-gray-900 p-6 rounded-lg border border-white/10">
           <h2 className="text-2xl font-bold text-white mb-2">5 Healthy Breakfast Ideas for Busy Mornings</h2>
           <p className="text-gray-400 mb-4">Start your day right with these quick and nutritious recipes that your kids will love.</p>
           <Link href="/blog/healthy-breakfast-ideas" className="text-green-400 font-semibold hover:text-green-300">Read More &rarr;</Link>
         </div>
 
-        {/* Post 2 */}
         <div className="bg-gray-900 p-6 rounded-lg border border-white/10">
           <h2 className="text-2xl font-bold text-white mb-2">Understanding Macronutrients: A Guide for Parents</h2>
-          <p className="text-gray-400 mb-4">Learn the basics of proteins, carbs, and fats to make informed decisions about your family's diet.</p>
+          <p className="text-gray-400 mb-4">Learn the basics of proteins, carbs, and fats to make informed decisions about your family&apos;s diet.</p> {/* Fixed apostrophe */}
           <Link href="/blog/understanding-macronutrients" className="text-green-400 font-semibold hover:text-green-300">Read More &rarr;</Link>
         </div>
 
-        {/* Post 3 */}
         <div className="bg-gray-900 p-6 rounded-lg border border-white/10">
           <h2 className="text-2xl font-bold text-white mb-2">How to Read Nutrition Labels Like a Pro</h2>
           <p className="text-gray-400 mb-4">Decode the confusing world of food labels and choose the healthiest options at the supermarket.</p>
