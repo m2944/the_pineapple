@@ -1,22 +1,35 @@
-// This is our reusable FeatureCard component.
-// It accepts an icon, a title, and a description as "props" (properties).
+// app/components/FeatureCard.tsx
 
-// We need to tell TypeScript what kind of props to expect.
+// The component's props are updated to accept a video source string
 type FeatureCardProps = {
-  icon: React.ReactNode;
+  videoSrc: string;
   title: string;
   description: string;
 };
 
-export default function FeatureCard({ icon, title, description }: FeatureCardProps) {
+export default function FeatureCard({ videoSrc, title, description }: FeatureCardProps) {
   return (
-    // The main card container with styling.
-    <div className="bg-[#111111] p-6 rounded-lg border border-white/10 flex flex-col gap-4">
-      <div>
-        {/* We'll display the icon we passed in here */}
-        {icon}
-      </div>
+    // The main card container with styling
+    <div className="bg-gray-900 p-6 rounded-lg border border-white/10 flex flex-col gap-4 text-center">
+      
+      {/* The title is now at the top */}
       <h3 className="text-xl font-semibold text-white">{title}</h3>
+      
+      {/* The new video element */}
+      <div className="aspect-video overflow-hidden rounded-md">
+        <video 
+          src={videoSrc}
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      {/* The description is at the bottom */}
       <p className="text-gray-400">{description}</p>
     </div>
   );

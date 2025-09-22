@@ -1,43 +1,73 @@
 // app/components/Footer.tsx
+'use client';
+
 import Link from 'next/link';
 
 export default function Footer() {
+  // We'll keep the handleSubmit logic here in case you want to reconnect it later
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    // Logic to send to Formspree would go here
+    alert("Thank you for subscribing!");
+    (event.target as HTMLFormElement).reset();
+  }
+
   return (
-    <footer className="w-full max-w-5xl text-gray-400 border-t border-gray-800 pt-8">
-      <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-        <div>
-          <h3 className="text-xl font-bold text-white">The Pineapple</h3>
-          <p className="mt-2 text-sm">Your partner in healthy eating.</p>
-          <form 
-            action="PASTE_YOUR_FORMSPREE_URL_HERE" 
-            method="POST" 
-            className="mt-4 flex gap-2"
-          >
-            <input 
-              type="email" 
-              name="email"
-              placeholder="Enter email address"
-              className="bg-gray-800 text-white px-4 py-2 rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
-              required
-            />
-            <button 
-              type="submit"
-              className="bg-green-500 text-black font-bold px-4 py-2 rounded-md hover:bg-green-600 transition-colors cursor-pointer"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
-        <div className="flex gap-8 mt-8 md:mt-0">
-          <div className="flex flex-col gap-2 text-sm">
-            <Link href="/#features" className="hover:text-white">Features</Link>
-            <Link href="/#pricing" className="hover:text-white">Pricing</Link>
-            <Link href="/blog" className="hover:text-white">Blog</Link>
+    <footer className="w-full bg-green-800 text-white mt-24 rounded-t-3xl">
+      <div className="w-full max-w-5xl mx-auto p-8 md:p-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          {/* Column 1: Explore More Olive Tools */}
+          <div>
+            <h3 className="font-bold mb-4">Explore More Olive Tools</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li><a href="#" className="hover:text-white">Explore Foods</a></li>
+              <li><a href="#" className="hover:text-white">Allergy Scanner App</a></li>
+              <li><a href="#" className="hover:text-white">Gluten Free Scanner</a></li>
+              <li><a href="#" className="hover:text-white">Dairy Free App</a></li>
+              <li><a href="#" className="hover:text-white">Food Ingredient Checker</a></li>
+            </ul>
+          </div>
+
+          {/* Column 2: About */}
+          <div>
+            <h3 className="font-bold mb-4">About</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li><a href="#" className="hover:text-white">Blog</a></li>
+              <li><a href="#" className="hover:text-white">Email us</a></li>
+            </ul>
+          </div>
+
+          {/* Column 3: Logo and Signup */}
+          <div className="md:text-right">
+            <h2 className="text-3xl font-bold">Olive</h2>
+            <p className="mt-2 text-gray-300 mb-4">Get the latest lab testing data sent directly to your inbox.</p>
+            <form onSubmit={handleSubmit} className="flex gap-2 justify-end">
+              <input 
+                type="email" 
+                name="email"
+                placeholder="Enter email address"
+                className="bg-green-700/50 text-white placeholder-gray-300 px-4 py-2 rounded-full border border-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
+                required
+              />
+              <button 
+                type="submit"
+                className="bg-white text-black font-bold px-6 py-2 rounded-full hover:bg-gray-200 transition-colors"
+              >
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
-      </div>
-      <div className="text-center text-sm mt-12 pt-8 border-t border-gray-800">
-        <p>&copy; 2025 The Pineapple. All rights reserved.</p>
+
+        <div className="text-sm text-gray-300 border-t border-gray-500 mt-12 pt-6 flex justify-between">
+          <div className="flex gap-4">
+            <a href="#" className="hover:text-white">Terms of Service</a>
+            <a href="#" className="hover:text-white">Privacy Policy</a>
+          </div>
+          <p>&copy; 2025 Olive Inc.</p>
+        </div>
       </div>
     </footer>
   );
